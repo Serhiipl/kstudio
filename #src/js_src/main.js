@@ -1,1 +1,1 @@
-//@prepros-append someScript.js
+// @prepros-append burger.js
