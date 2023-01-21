@@ -5,3 +5,26 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 } else {
     document.body.classList.add("_pc");
 };
+
+
+const menuLinks = document.querySelectorAll('.menu-link[data-goto]');
+
+if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener('click', onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const goToBlock = document.querySelector(menuLink.dataset.goto);
+            const goToBlockValue = goToBlock.getBoundingClientRect().top + pageYOffset - document.querySelector(".header").offsetHeight;
+
+            window.scrollTo({
+                top: goToBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+}
