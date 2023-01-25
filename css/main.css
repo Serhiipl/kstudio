@@ -254,25 +254,21 @@ body._lock {
 
 /*------------------------footer------------------------*/
 .footer_body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1em 1fr 1em 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-column-gap: 1em;
+  background-color: rgb(185, 184, 184);
 }
 .footer_body .social-image {
   width: 30px;
   height: 30px;
 }
 
-.map_wraper, .addres_wrapper, .contacts_wrapper {
-  width: 30%;
-  height: auto;
+.addres_wrapper, .contacts_wrapper {
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 @media (min-width: 767px) {
@@ -387,12 +383,13 @@ body._lock {
             flex-direction: column;
   }
   .footer_body {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .map_wraper, .addres_wrapper, .contacts_wrapper {
-    width: 90%;
-    min-height: 30vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*------styli--do--popup--cookies*/
