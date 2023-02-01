@@ -15,8 +15,27 @@ ol, ul,li, menu {list-style: none;}
 img {max-width: 100%;vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 /*----------------------------------------------------------------*/
+//////////////////////////fonts////////////////////////////////////////////////////////////////
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Aboreto:regular&display=swap);
 
+@mixin font-title {
+    font-family: Aboreto;
+    font-weight: 400;
+    font-size: 1.5em;
+    font-style:normal;
+}
+
+@mixin font-standard {
+    font-family: Lato;
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.4em;
+}
 /*-----------------------------header-----------------------------------*/
+
 .header {
     position: fixed;
     top: 0;
@@ -37,11 +56,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
 }
 .header_logo {
-    background-color: #fff;
-    border-radius: 50%;
     z-index: 5;
-    width: 40px;
-    height: 40px;
+    background-image: url(/images/logo/bbwhite.svg);
+    background-size: cover;
+    width: 12rem;
+    height: 75px;
+    margin-top: -1rem;
+ 
+  
 }
 
 .menu_icon {
@@ -164,10 +186,14 @@ body._lock {
     // grid-template-columns: 2fr 1fr 1fr;
     // grid-column-gap: 1em;
     // background-color: rgb(185, 184, 184);
-  
-.social-image {
-    width: 30px;
-    height: 30px;
+    .social_icons_wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+.social_icons {
+    width: 50px;
+    height: 50px;
     }
 }
 
@@ -185,13 +211,14 @@ iframe {
 }
 .contacts_wrapper {
     width: 30%;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-style: italic;
+    @include font-standard;
+    .call_to, .mail_to {
+        color: #000;
+}
 }
 .contacts_title_paragraf {
-    font-size: 1.5em;
-    margin-bottom: 1rem;
+    
+    @include font-title;
 }
 .hr-contacts {
     display: block;
@@ -235,7 +262,7 @@ iframe {
             height: 10%;
             width: 100%;
             transition: all 0.3s ease 0s;
-            background-color: #fff;
+            background-color: rgb(0, 0, 0);
         }
 
         &::before,
@@ -317,6 +344,15 @@ iframe {
     .footer_body {
         display: flex;
         flex-direction: column;
+
+        .contacts_info_wrapper {
+            flex-direction: column;
+        }
+        .contacts_wrapper {
+            width: 100%;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+        }
     }  
 }
 
