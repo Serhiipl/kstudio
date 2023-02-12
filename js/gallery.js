@@ -62,10 +62,6 @@ function popupOpen(curentPopup) {
 }
 
 
-
-
-
-
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
@@ -108,33 +104,3 @@ function bodyUnLock() {
     }, timeout);
 }
 
-// const headElement = document.head;
-// const bodyElement = document.body;
-// // console.log(headElement);
-// // console.log(bodyElement);
-
-// const childElements = bodyElement.children;
-// console.log(childElements);
-
-// const lastChildNode = bodyElement.lastChild;
-// const firstChildNode = bodyElement.firstChild;
-
-// console.log(firstChildNode);
-// console.log(lastChildNode);
-
-// const nodeList = bodyElement.childNodes;
-// console.log(bodyElement.hasChildNodes());
-// console.log(bodyElement.childNodes);
-
-// for (let node of nodeList) {
-//     console.log(node);
-// }
-
-
-// const previousSiblingNode = bodyElement.previousSibling;
-// const nextSiblingNode = bodyElement.nextSibling;
-// const parentNode = bodyElement.parentNode;
-
-// console.log(previousSiblingNode);
-// console.log(nextSiblingNode);
-// console.log(parentNode);
