@@ -3,7 +3,7 @@
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
 const popupLinks = document.querySelectorAll('.popup-link');  //wybór zdjęcia
-const mainImage = document.querySelector('.popup_image_wrap'); // constanta dla wstawki img
+// const mainImage = document.querySelector('.popup_image_wrap'); // constanta dla wstawki img
 const popupImg = document.getElementById('popupImage');
 const popup = document.getElementById('popup');
 
@@ -14,7 +14,7 @@ if(popupLinks.length > 0){
     for(let index = 0; index < popupLinks.length; index++) {
         const popupLink = popupLinks[index];
         popupLink.addEventListener("click", function (e){
-            const popupName = popupLink.getAttribute('src');
+            // const popupName = popupLink.getAttribute('src');
             const curentPopup = document.getElementById('popup');
             popup.classList.add('open');
             popupImg.src = popupLink.src;
@@ -25,17 +25,20 @@ if(popupLinks.length > 0){
 }
 
 const popupCloseIcon = document.querySelector('.close-popup');
+
 if (popupCloseIcon > 0) {
     for( let index = 0; index < popupCloseIcon.length; index++) {
         const elClose = popupCloseIcon[index];
         
         elClose.addEventListener('click', function (e) {
             popupClose(elClose.closest('.popup'));
-            e.preventDefault();
+            // e.preventDefault();
+            // elClose.removeEventListener;
 
             popupImg.addEventListener('ondbclick',function(e) { //zamekanie po dbckick
                 popupClose(elClose.closest('.popup'));
-                e.preventDefault();
+                // e.preventDefault();
+                // popupImg.removeEventListener;
                 });
 
 
