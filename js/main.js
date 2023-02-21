@@ -7,19 +7,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
     document.body.classList.add("_pc");
 };
 
-// menu burger
-const iconMenu = document.querySelector(".menu_icon");
-const menuBody = document.querySelector(".menu_body");
 
-if (iconMenu) {
-    iconMenu.addEventListener("click", function (e) {
-        document.body.classList.toggle("_lock");
-        iconMenu.classList.toggle("_active");
-        menuBody.classList.toggle("_active");
-    });
-}
-
-//przewijanie do elementa po klilu
 const menuLinks = document.querySelectorAll('.menu-link[data-goto]');
 
 if (menuLinks.length > 0) {
@@ -33,12 +21,6 @@ if (menuLinks.length > 0) {
             const goToBlock = document.querySelector(menuLink.dataset.goto);
             const goToBlockValue = goToBlock.getBoundingClientRect().top + pageYOffset - document.querySelector(".header").offsetHeight;
 
-            if (iconMenu.classList.contains('_active')) {
-                document.body.classList.remove("_lock");
-                iconMenu.classList.remove("_active");
-                menuBody.classList.remove("_active");
-            }
-
             window.scrollTo({
                 top: goToBlockValue,
                 behavior: "smooth"
@@ -48,17 +30,15 @@ if (menuLinks.length > 0) {
     }
 }
 
-// Include Lightbox 
-// import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
-// const lightbox = new PhotoSwipeLightbox({
-//   // may select multiple "galleries"
-//   gallery: '#gallery--getting-started',
+import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
 
-//   // Elements within gallery (slides)
-//   children: 'a',
-
-//   // setup PhotoSwipe Core dynamic import
-//   pswpModule: () => import('/photoswipe/photoswipe.esm.js')
-// });
-// lightbox.init();
+  // init Swiper:
+  const swiper = new Swiper('.swiper', {
+    // configure Swiper to use modules
+    modules: [Navigation, Pagination],
+    
+  });
