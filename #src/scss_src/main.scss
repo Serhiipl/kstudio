@@ -171,7 +171,7 @@ body._lock {
     font-size: 1.5em;
 }
  /*--------------sections---------------------*/
-.section_blok._about,.section_blok._offer,.footer_body {
+.section_blok._about,.section_blok._offer, .section_blok._reviews,.footer_body {
     max-width: 1200px;
     margin: 2em auto;
    
@@ -674,3 +674,18 @@ body.lock {
   }
   
    /* ================== */
+//    .section_blok._reviews {
+//     display: flex;
+//     width: 75rem;
+//    }
+
+//    .swiper {
+//     width: 100%;
+//     height: 300px;
+//     padding: 0rem 1rem;
+//     background-color: #228559;
+//   }
+.slider .swiper-container {
+    width: 100%;
+    height: 100%;
+}

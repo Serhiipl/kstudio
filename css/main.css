@@ -213,7 +213,7 @@ body._lock {
 }
 
 /*--------------sections---------------------*/
-.section_blok._about, .section_blok._offer, .footer_body {
+.section_blok._about, .section_blok._offer, .section_blok._reviews, .footer_body {
   max-width: 1200px;
   margin: 2em auto;
 }
@@ -733,3 +733,7 @@ body.lock {
 }
 
 /* ================== */
+.slider .swiper-container {
+  width: 100%;
+  height: 100%;
+}
