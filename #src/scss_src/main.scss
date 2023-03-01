@@ -37,19 +37,20 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 //////////////////////////fonts////////////////////////////////////////////////////////////////
 @import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Aboreto:regular&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Proza+Libre:regular,italic,500,500italic,600,600italic,700,700italic,800,800italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Proza+Libre:regular,italic,500,500italic,600,600italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400regular,500&display=swap);
 
 @mixin font-title {
     font-family: Aboreto;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.7em;
     font-style:normal;
 }
 
 @mixin font-standard {
     font-family: Lato;
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1.4em;
@@ -136,6 +137,7 @@ body._lock {
     min-width: 100%; 
     display: flex;
     flex-direction: column; 
+    font-size: calc(15px + 0.4vw);// dynamiczna zmiana rozmiaru tekstu///////////////////////////////////////////////
 }
 
 
@@ -170,6 +172,44 @@ body._lock {
 .title_text {
     font-size: 1.5em;
 }
+
+/*
+*
+* About me block
+*
+*/
+.about_content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    align-items: center;
+    height: 100%;
+
+ // 
+//  .about_image_wrapper {
+//         height: auto;
+//         width: fit-content;
+//         border-radius: 50%;
+        // overflow: hidden;
+        .about_image {
+            flex-basis: 300px;
+            width: 300px;
+             height:auto;
+             border-radius: 50%;
+            margin-top: 2rem;
+            flex-grow: 1;
+        }
+    // }
+ 
+}
+
+
+
+
+   
+
+  
+
  /*--------------sections---------------------*/
 .section_blok._about,.section_blok._offer, .section_blok._reviews,.footer_body {
     max-width: 1200px;
@@ -188,7 +228,8 @@ body._lock {
 .sub_title {
     @include font-title;
     text-transform: uppercase;
-    font-size: 2em;
+    // font-size: 2em;
+    font-size: calc(2rem + 0.1vw);
     margin-bottom: 1em;
     
 }
@@ -203,9 +244,15 @@ body._lock {
     padding: 0 1.25rem;
 }
 .img-offer-content {
-    border-radius: 8px;
+    border-radius: 3%;
 }
 
+// picture .img-offer-content {
+//     display: block;
+//     height:auto;
+//     width:90%;
+    
+// }
 /*------------------------footer------------------------*/
 .footer_body {
     display: flex;
@@ -257,6 +304,7 @@ iframe {
 .contacts_title_paragraf {
     
     @include font-title;
+    margin-bottom: 0.5em;
 }
 .hr-contacts {
     display: block;
@@ -460,7 +508,22 @@ iframe {
             margin-top: 2rem;
             font-size: 1.3rem;
         }
-    }  
+    } 
+    .cookie_popup_body#cookie_popup {
+        position: fixed;
+        width: 100vw;
+        top: 72dvh;
+    }
+    .cookie_popup_body .cookie_popup_content {
+        width: 98%;
+    }
+    .cookie_popup_body .cookie_popup_content .cookie_popup_text {
+        width: 95%;
+    }
+
+    .about_content {
+        flex-wrap: wrap;
+    }
 }
  p.rights {
     text-align: center;
@@ -481,10 +544,11 @@ iframe {
     visibility: hidden;
   }
   
-  .cookie_popup_body {
+  div.cookie_popup_body {
     position: fixed;
+    
     width: 100vw;
-    top: 65dvh;
+    top: 90vh;
     z-index: 100;
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
@@ -518,14 +582,16 @@ iframe {
         -ms-flex-align: center;
             align-items: center;
     background-color: rgb(255, 255, 255);
+   
     min-width: -webkit-fit-content;
     min-width: -moz-fit-content;
     min-width: fit-content;
+    
     color: black;
-    padding: 10px 10px;
+    padding: 10px 5px;
     border-radius: 10px;
-    margin-right: 2em;
-    margin-left: 2em;
+    margin-right: 1em;
+    margin-left: 1em;
     -webkit-box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.5);
             box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.5);
   }
@@ -679,13 +745,173 @@ body.lock {
 //     width: 75rem;
 //    }
 
-//    .swiper {
-//     width: 100%;
-//     height: 300px;
-//     padding: 0rem 1rem;
-//     background-color: #228559;
-//   }
-.slider .swiper-container {
+   .swiper {
     width: 100%;
-    height: 100%;
+    padding: 2rem 2rem;
+    
+  }
+.slider .swiper-container {
+    width: 90%;
+    height: 29rem;
+}
+.swiper-slide {
+    padding: 1.5rem 1rem;
+    display: block;
+    height: 25rem;
+    width: 90%;
+    min-width: 18rem;
+    border: 1px solid transparent;
+    box-shadow: 0 13px 18px -8px rgb(0 0 0 / 15%), 0 11px 55px 10px rgb(0 0 0 / 7%);
+    border-radius: .5rem;
+    overflow: hidden;
+    
+  }
+.slide_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    .review_logo {
+        display: block;
+        height: calc(3.2rem + 0.4vw);
+        width: calc(3.2rem + 0.4vw);
+        border: 1px #5d5d5d;
+        border-radius: 50%;
+        background-color: rgb(30, 183, 78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e2dcdc;
+        font-size: 2rem;
+        font-family: "Proza Libre", sans-serif;
+        // font-weight: bold;
+        // &p {
+        //     text-align: center;
+            
+        // }
+    }
+    // &::after {
+    //     top: 2.5rem;
+    //     left: 0;
+    //     content: "";
+    //     display: block;
+    //     height: .125rem;
+    //     width: 90%;
+    //     color: #000;
+    //     margin-top: 1.5rem;
+    // }
+}
+.reviewer_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .reviwer_name{
+        color:rgb(20, 20, 20);
+        font-size: calc(1.1rem + 0.1vw);
+        margin-bottom: .5rem;
+        font-family: "Roboto";
+        font-weight: 400;
+        
+    }
+    // .rating {
+    //     position: relative;
+    //     font-size: 2rem;
+    //     display: inline-block;
+    //     &::before {
+    //         content:"★★★★★";
+    //         display: block;
+    //         color: #e37400;
+            
+
+    //     }
+    //     &_items {
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         top: 0;
+    //         left: 0;
+    //         display: flex;
+    //         flex-direction: row-reverse;
+    //         overflow: hidden;
+    //     }
+    //     &_item {
+    //         position: absolute;
+    //         width: 0%;
+    //         height: 0%;
+    //         opacity: 0;
+    //         visibility: hidden;
+    //         top: 0;
+    //         left: 0;
+    //     }
+    //     &_label {
+    //         flex: 0 0 20%;
+    //         height: 100%;
+    //         cursor: pointer;
+    //         color: #e37400;
+    //     }
+    //     &_label::before {
+    //         content: "★";
+    //         display: block;
+    //         transition:color 0.3s ease 0s;
+           
+    //     }
+    // }
+}
+.rating {
+        position: relative;
+        font-size: 2rem;
+        display: inline-block;
+        &::before {
+            content:"★★★★★";
+            display: block;
+            color: #e37400;
+            
+
+        }
+        &_items {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            overflow: hidden;
+        }
+        &_item {
+            position: absolute;
+            width: 0%;
+            height: 0%;
+            opacity: 0;
+            visibility: hidden;
+            top: 0;
+            left: 0;
+        }
+        &_label {
+            flex: 0 0 20%;
+            height: 100%;
+            cursor: pointer;
+            color: #e37400;
+        }
+        &_label::before {
+            content: "★";
+            display: block;
+            transition:color 0.3s ease 0s;
+           
+        }
+    }
+.review_text {
+    font-size: calc(1.1rem + 0.1vw);
+    width: 90%;
+    margin:2.5em 0rem 1rem 1rem;
+    margin-right: auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.swiper-pagination-bullet-active {
+    background-color: gray;
 }

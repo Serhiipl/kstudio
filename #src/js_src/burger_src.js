@@ -10,7 +10,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 // burger menu
 const menuBody = document.querySelector(".menu_body");
 const iconMenu = document.querySelector(".menu_icon");
-if (iconMenu) {
+if (iconMenu) { //sprawdzamy czy takie cos istnieje
     
     iconMenu.addEventListener("click", function(e) {
         document.body.classList.toggle('_lock');
