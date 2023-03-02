@@ -233,6 +233,12 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  font-family: Lato;
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.4em;
 }
 .about_content .about_image {
   -ms-flex-preferred-size: 300px;
@@ -287,8 +293,11 @@ body._lock {
 }
 
 .content_text {
-  line-height: 1.5em;
-  padding: 0 1.25rem;
+  font-family: Lato;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  padding: 1em 1.25rem;
+  font-weight: 300;
 }
 
 .img-offer-content {
@@ -606,11 +615,11 @@ div.cookie_popup_body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 30px 10px 30px 10px;
 }
 
@@ -624,10 +633,10 @@ div.cookie_popup_body {
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
+      flex-flow: row wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -782,7 +791,7 @@ body.lock {
   color: rgb(61, 4, 4);
 }
 
-/* ================== */
+/* ======== section_blok  reviews ========== */
 .swiper {
   width: 100%;
   padding: 2rem 2rem;
@@ -796,9 +805,9 @@ body.lock {
 .swiper-slide {
   padding: 1.5rem 1rem;
   display: block;
-  height: 25rem;
+  height: 27rem;
   width: 90%;
-  min-width: 18rem;
+  min-width: 15rem;
   border: 1px solid transparent;
   -webkit-box-shadow: 0 13px 18px -8px rgba(0, 0, 0, 0.15), 0 11px 55px 10px rgba(0, 0, 0, 0.07);
           box-shadow: 0 13px 18px -8px rgba(0, 0, 0, 0.15), 0 11px 55px 10px rgba(0, 0, 0, 0.07);
@@ -818,18 +827,17 @@ body.lock {
       flex-wrap: nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-bottom: 1.5rem;
 }
-.slide_header .review_logo {
+.slide_header .review_logo_green {
   display: block;
   height: calc(3.2rem + 0.4vw);
   width: calc(3.2rem + 0.4vw);
   border: 1px #5d5d5d;
   border-radius: 50%;
-  background-color: rgb(30, 183, 78);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -839,7 +847,90 @@ body.lock {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #e2dcdc;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Proza Libre", sans-serif;
+  background-color: rgb(30, 183, 78);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.slide_header .review_logo_red {
+  background-color: red;
+  display: block;
+  height: calc(3.2rem + 0.4vw);
+  width: calc(3.2rem + 0.4vw);
+  border: 1px #5d5d5d;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Proza Libre", sans-serif;
+}
+.slide_header .review_logo_yellow {
+  background-color: yellow;
+  display: block;
+  height: calc(3.2rem + 0.4vw);
+  width: calc(3.2rem + 0.4vw);
+  border: 1px #5d5d5d;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Proza Libre", sans-serif;
+}
+.slide_header .review_logo_violet {
+  background-color: violet;
+  display: block;
+  height: calc(3.2rem + 0.4vw);
+  width: calc(3.2rem + 0.4vw);
+  border: 1px #5d5d5d;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Proza Libre", sans-serif;
+}
+.slide_header .review_logo_orange {
+  background-color: orange;
+  display: block;
+  height: calc(3.2rem + 0.4vw);
+  width: calc(3.2rem + 0.4vw);
+  border: 1px #5d5d5d;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
   font-size: 2rem;
   font-family: "Proza Libre", sans-serif;
 }
@@ -862,6 +953,8 @@ body.lock {
   margin-bottom: 0.5rem;
   font-family: "Roboto";
   font-weight: 400;
+  text-align: center;
+  text-justify: auto;
 }
 
 .rating {
