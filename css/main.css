@@ -1073,3 +1073,208 @@ body.lock {
     background-color: rgba(137, 137, 137, 0.578);
   }
 }
+/*----------------------------------------------------------------*/
+.form {
+  max-width: 25rem;
+  margin: 0rem auto;
+  color: antiquewhite;
+  padding: 1.875rem 0;
+}
+.form_body {
+  position: relative;
+  padding: 1rem 1rem;
+  background-color: rgb(174, 170, 141);
+}
+.form_body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(174, 170, 141, 0.881) url("/img/loading.gif") center/3.125rem no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.form_body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+.form_title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0rem 0rem 1.875rem 0rem;
+  text-align: center;
+}
+.form_item {
+  margin: 0rem 0rem 1.3rem 0rem;
+}
+.form_label {
+  font-size: 1.125rem;
+  display: block;
+  margin: 0rem 0rem 0.6rem 0rem;
+}
+.form_input,
+.form .calendar {
+  height: 2.5rem;
+  padding: 0rem 1.25rem;
+  border-radius: 0.3125rem;
+  width: 100%;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+.form_input:focus,
+.form .calendar:focus {
+  -webkit-box-shadow: 0 0 0.625rem whitesmoke;
+          box-shadow: 0 0 0.625rem whitesmoke;
+  background-color: #e3e3e3;
+}
+.form_input::-webkit-input-placeholder {
+  color: #7c8160;
+}
+.form_input::-moz-placeholder {
+  color: #7c8160;
+}
+.form_input:-ms-input-placeholder {
+  color: #7c8160;
+}
+.form_input::-ms-input-placeholder {
+  color: #7c8160;
+}
+.form_input::placeholder {
+  color: #7c8160;
+}
+.form_input._error {
+  -webkit-box-shadow: 0 0 0.625rem rgb(255, 0, 0);
+          box-shadow: 0 0 0.625rem rgb(255, 0, 0);
+  background-color: #ffffff;
+}
+.form textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+  padding: 1rem;
+}
+.form_button {
+  position: relative;
+  top: 0;
+  margin: auto;
+  min-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 3rem;
+  background-color: transparent;
+  border: 1px solid #616446;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 1rem 0.2rem 1rem 0.2rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  -webkit-box-shadow: 3px 8px 10px 0px rgb(59, 73, 51);
+          box-shadow: 3px 8px 10px 0px rgb(59, 73, 51);
+  -webkit-transition: blackground-color 0.5s ease 0s;
+  transition: blackground-color 0.5s ease 0s;
+}
+.form_button:hover {
+  background-color: #1c1d12;
+  color: #dde4b4;
+}
+.form_button:active {
+  top: 0.1875rem;
+}
+
+.checkbox_input._error {
+  -webkit-box-shadow: 0 0 0.625rem rgb(255, 0, 0);
+          box-shadow: 0 0 0.625rem rgb(255, 0, 0);
+}
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0rem 0rem 1.3rem 0rem;
+  cursor: pointer;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #ffffff;
+  border-radius: 0.3125rem;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #7c8160 transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #7c8160 transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  color: #000000;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  border-radius: 0.3125rem;
+  position: absolute;
+  background-color: rgb(202, 198, 179);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 18.75rem;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+/*hide scroll bar in (options) chrome based*/
+.select-items::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
