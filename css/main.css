@@ -96,12 +96,14 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0px 30px;
   min-height: 70px;
 }
@@ -130,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-size: 1.7em;
   font-style: normal;
+  color: #391e41;
   font-size: calc(1.3rem + 0.2vw);
   font-weight: 400;
 }
@@ -242,13 +245,14 @@ body._lock {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.4em;
+  color: #391e41;
 }
 .about_content .about_image {
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
   width: 300px;
   height: auto;
-  border-radius: 50%;
+  border-radius: 0.5rem;
   margin-top: 2rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -275,9 +279,11 @@ body._lock {
   font-weight: 400;
   font-size: 1.7em;
   font-style: normal;
+  color: #391e41;
   text-transform: uppercase;
   font-size: calc(2rem + 0.1vw);
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .section_content {
@@ -373,6 +379,7 @@ iframe {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.4em;
+  color: #391e41;
 }
 .contacts_wrapper .call_to, .contacts_wrapper .mail_to {
   color: #000;
@@ -383,6 +390,7 @@ iframe {
   font-weight: 400;
   font-size: 1.7em;
   font-style: normal;
+  color: #391e41;
   margin-bottom: 0.5em;
 }
 
@@ -419,6 +427,11 @@ iframe {
   }
 }
 @media (max-width: 49.6875em) {
+  .header_container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .menu_icon {
     z-index: 5;
     display: block;
@@ -500,6 +513,7 @@ iframe {
     font-weight: 400;
     font-size: 1.7em;
     font-style: normal;
+    color: #391e41;
     font-size: 2.5rem;
     margin: 0px 0px 3vh 0px;
   }
@@ -539,6 +553,7 @@ iframe {
     font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1.4em;
+    color: #391e41;
     font-size: 1.3rem;
     line-height: 1.4;
     color: #000;
@@ -711,6 +726,7 @@ div.cookie_popup_body {
   font-weight: 400;
   font-size: 1.7em;
   font-style: normal;
+  color: #391e41;
 }
 
 .content-gallery {
