@@ -176,6 +176,7 @@ document.addEventListener("click", closeAllSelect);
 let isFormOpen = false;
 let formWrapper = document.querySelector(".form_wrapper");
 let form = document.querySelector("#form");
+let closeBtn = document.querySelector("#form_close_btn");
 //
 // // відкриття форми
 function openForm() {
@@ -186,6 +187,11 @@ let openLink = document.querySelector("#reservation");
 openLink.addEventListener("click", openForm);
 
 // // закриття форми
+closeBtn.addEventListener("click", function (e) {
+  if (isFormOpen) {
+    closeForm();
+  }
+});
 
 function closeForm() {
   formWrapper.classList.add("d-none");
