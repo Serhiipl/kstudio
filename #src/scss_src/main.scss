@@ -323,6 +323,10 @@ iframe {
   background-color: #000;
   margin-bottom: 1rem;
 }
+
+// 49.6875 rem --> 795px
+// ===================== większe ekrany =================
+
 @media (min-width: 49.6876rem) {
   .menu_list {
     display: flex;
@@ -363,12 +367,17 @@ iframe {
       transform: scaleX(1);
     }
   }
+  // ========================
   .form_wrapper {
-    bottom: 0.5rem;
+    padding-top: 6rem;
+    // bottom: 0.5rem;
   }
 }
 
-@media (max-width: 49.6875em) {
+// 49.6875 rem --> 795px
+// ===================== mniejsze ekrany =================
+
+@media (max-width: 49.6875rem) {
   .header_container {
     justify-content: space-between;
   }
@@ -1019,7 +1028,7 @@ body.lock {
   cursor: pointer;
 }
 .form {
-  max-width: 25rem;
+  max-width: 20rem;
   margin: 0rem auto;
   color: rgb(6, 6, 5);
   padding: 1.875rem 0;
@@ -1056,6 +1065,7 @@ body.lock {
   &_title {
     @include font-title;
     margin: 0rem 0rem 1.875rem 0rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -1075,14 +1085,14 @@ body.lock {
     padding: 0 0.5rem;
     color: rgb(0, 0, 0);
     cursor: text;
-    font-size: 1.125rem;
+    font-size: 1rem;
     display: none;
     margin: 0rem 0rem 0.6rem 0rem;
   }
 
   // .form_input
   #calendar {
-    height: 2.2rem;
+    height: 1.8rem;
     width: 100%;
     padding: 0rem 1.25rem;
     border-radius: 0.3125rem;
@@ -1094,11 +1104,10 @@ body.lock {
   }
 
   &_input {
-    height: 2rem;
+    height: 1.8rem;
     padding: 0rem 1.25rem;
     border-radius: 0.3125rem;
     width: 100%;
-    font-size: 2rem;
     cursor: pointer;
     @include font-standard;
     font-size: smaller;
@@ -1119,7 +1128,7 @@ body.lock {
   }
 
   textarea {
-    min-height: 6.5rem;
+    min-height: 5rem;
     overflow-y: hidden;
     resize: vertical;
     padding: 0.8rem;
