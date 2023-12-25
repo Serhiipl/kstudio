@@ -16,6 +16,6 @@
   "theme_color": "#f3ddea",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "http://thelooks.pl",
+  "start_url": "http://www.thelooks.pl",
   "orientation": "portrait-primary"
 }

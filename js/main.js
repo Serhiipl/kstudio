@@ -253,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         form.reset();
         form.classList.remove("_sending");
+        closeForm();
       } else {
         alert("blad wysylania");
         form.classList.remove("_sending");
