@@ -183,14 +183,22 @@ let isFormOpen = false;
 let formWrapper = document.querySelector(".form_wrapper");
 let form = document.querySelector("#form");
 let closeBtn = document.querySelector("#form_close_btn");
+let openLink = document.querySelector("#reservation");
+let reservationBtn = document.querySelector("#reservation-btn");
 //
 // // відкриття форми
 function openForm() {
   formWrapper.classList.toggle("d-none");
   isFormOpen = true;
 }
-let openLink = document.querySelector("#reservation");
 openLink.addEventListener("click", openForm);
+reservationBtn.addEventListener("click", () => {
+  if (!isFormOpen) {
+    openForm();
+  } else if (isFormOpen) {
+    closeForm();
+  }
+});
 
 // // закриття форми
 closeBtn.addEventListener("click", function (e) {
@@ -210,7 +218,8 @@ document.addEventListener("click", function (e) {
     !form.contains(e.target) &&
     !formWrapper.classList.contains("d-none") &&
     // !e.target.closest(".form_wrapper")
-    e.target !== openLink
+    e.target !== openLink &&
+    e.target !== reservationBtn
   ) {
     closeForm();
     console.log("click outside");
