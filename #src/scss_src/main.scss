@@ -85,6 +85,7 @@ h6 {
 @import url(https://fonts.googleapis.com/css?family=Aboreto:regular&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Proza+Libre:regular,italic,500,500italic,600,600italic&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400regular,500&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
 
 @mixin font-title {
   font-family: Aboreto;
@@ -153,6 +154,7 @@ h6 {
   font-size: calc(1.3rem + 0.2vw);
   font-weight: 400;
 }
+
 /*-----------------------------------main---------------------------*/
 
 body._lock {
@@ -226,32 +228,42 @@ body._lock {
 .section_blok._about,
 .section_blok._offer,
 .section_blok._reviews,
-.footer_body {
+.footer_body,
+.cookies-politics {
   max-width: 1200px;
   margin: 2em auto;
 }
 .offer_body,
 .about_body,
-.footer_body {
+.footer_body,
+.cookies-politics {
   padding: 20px 20px;
 }
 
 /*----------------------ofer-----------------*/
 .offer_element {
-  margin-bottom: 2.5em;
+  margin-bottom: 5em;
 }
 .sub_title {
   @include font-title;
   text-transform: uppercase;
   // font-size: 2em;
   font-size: calc(2rem + 0.1vw);
-  margin-bottom: 1em;
+  margin-bottom: 4rem;
   text-align: center;
 }
+// .section_content {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   align-items: start;
+// }
 .section_content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 0px;
   align-items: start;
 }
 .content_text {
@@ -261,9 +273,35 @@ body._lock {
   line-height: 1.3;
   padding: 1em 1.25rem;
   font-weight: 300;
+  text-wrap: pretty;
 }
 .img-offer-content {
   border-radius: 3%;
+  height: auto;
+}
+
+// ====================== polityka prywatnosci ===========================
+.cookies-politics > h2 {
+  @include font-title;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cookies-politics > h3 {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  font-weight: 100;
+  margin: 1rem 1rem;
+}
+.cookies-politics > ul > li {
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+}
+.cookies-politics {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-weight: 100;
 }
 
 /*------------------------footer------------------------*/
@@ -323,11 +361,79 @@ iframe {
   background-color: #000;
   margin-bottom: 1rem;
 }
+.button-wrapper {
+  padding: 0.8rem;
+  background-color: rgb(215, 167, 210);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  // color: #f1e6ec;
+  transition: all 0.4s ease;
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  top: calc(100dvh - 6rem);
+  // top: 88dvh;
+  // left: 88dvw;
+  left: calc(100dvw - 8rem);
+  padding: 0.5rem;
+  font-family: "Proza Libre", serif;
+  font-size: 0.9rem;
+  &:active {
+    transform: scale(0.8);
+  }
+  &:hover {
+    background-color: #472551;
+  }
+
+  a#reservation-btn {
+    color: #391e41;
+    padding: 1rem 0.2rem;
+    text-wrap: balance;
+    text-align: center;
+  }
+  // animation: shadow 3s linear 1s infinite alternate slidein;
+  animation: shadow-drop-2-center 5s ease 1s infinite both;
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    transform: translateZ(0);
+    box-shadow: 0 0 30px 15px rgba(158, 148, 148, 0.779);
+    transform: scale(1.1);
+  }
+  25% {
+    transform: translateZ(0);
+    box-shadow: 0 0 15px 7px rgba(202, 101, 248, 0.094);
+    transform: scale(1);
+  }
+  50% {
+    transform: translateZ(50px);
+    box-shadow: 0 0 30px 15px rgba(88, 80, 93, 0.995);
+    transform: scale(1.1);
+  }
+  75% {
+    transform: translateZ(0);
+    box-shadow: 0 0 15px 7px rgba(202, 101, 248, 0.094);
+    transform: scale(1);
+  }
+  100% {
+    transform: translateZ(0);
+    box-shadow: 0 0 30px 15px rgba(158, 148, 148, 0.779);
+    transform: scale(1.1);
+  }
+}
 
 // 49.6875 rem --> 795px
 // ===================== większe ekrany =================
 
 @media (min-width: 49.6876rem) {
+  // .button-wrapper {
+  //   display: none;
+  // }
+
   .menu_list {
     display: flex;
     align-items: center;
@@ -344,9 +450,9 @@ iframe {
   .burger_contacts {
     display: none;
   }
-  .img-offer-content {
-    max-width: 50%;
-  }
+  // .img-offer-content {
+  //   max-width: 50%;
+  // }
   .menu-link {
     ////////////////LINIJA POD ELEMENTEM MENU W PC WERSII////////////////////
     &::before {
@@ -378,6 +484,42 @@ iframe {
 // ===================== mniejsze ekrany =================
 
 @media (max-width: 49.6875rem) {
+  // .button-wrapper {
+  //   padding: 0.8rem;
+  //   background-color: #391f41;
+  //   width: 6rem;
+  //   height: 6rem;
+  //   border-radius: 50%;
+  //   color: #f1e6ec;
+  //   transition: all 0.4s ease;
+  //   position: fixed;
+  //   display: flex;
+  //   flex-wrap: nowrap;
+  //   align-items: center;
+  //   justify-content: center;
+  //   z-index: 5;
+  //   top: 90dvh;
+  //   left: 5dvw;
+  //   padding: 0.5rem;
+  //   font-family: "Proza Libre", serif;
+  //   font-size: 1rem;
+  //   &:active {
+  //     transform: scale(0.8);
+  //   }
+  //   &:hover {
+  //     background-color: #472551;
+  //   }
+  //   // .btn-reservation-link {
+  //   //   display: block;
+  //   //   font-family: "Proza Libre", serif;
+  //   //   // position: absolute;
+  //   //   // top: 3rem;
+  //   // }
+  // }
+  .menu-link.ls {
+    display: none;
+    visibility: hidden;
+  }
   .header_container {
     justify-content: space-between;
   }
@@ -531,11 +673,18 @@ iframe {
     width: 4rem;
     height: 4rem;
   }
+
   .fullscreen_title_block {
     min-height: 50dvh;
   }
+  // .section_content {
+  //   flex-direction: column;
+  // }
   .section_content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  .sub_title {
+    margin-bottom: 1.5rem;
   }
   .footer_body {
     display: flex;
@@ -573,6 +722,40 @@ iframe {
     top: 2rem;
     background-color: #f3ddea;
   }
+}
+
+// ===================== małe ekrany =================
+
+@media (max-width: 25rem) {
+  .button-wrapper {
+    padding: 0.8rem;
+    // background-color: rgb(215, 167, 210);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    // color: #391e41;
+    transition: all 0.4s ease;
+    position: fixed;
+    top: 90dvh;
+    left: 80dvw;
+    // padding: 0.5rem;
+    &:active {
+      transform: scale(0.8);
+    }
+
+    a#reservation-btn {
+      // font-family: "Proza Libre", serif;
+      font-size: 0.7rem;
+      // color: #391e41;
+      // text-align: center;
+      // padding: 1rem 0rem;
+    }
+  }
+}
+.polityka-prywatnosci {
+  text-align: center;
+  @include font-standard;
+  color: #000;
 }
 p.rights {
   text-align: center;
