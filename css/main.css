@@ -310,6 +310,8 @@ body._lock {
 }
 
 .section_content > *:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
@@ -630,9 +632,6 @@ iframe {
   .form_wrapper {
     padding-top: 6rem;
   }
-  .img-offer-content {
-    height: auto;
-  }
 }
 @media (max-width: 49.6875rem) {
   .menu-link.ls {
@@ -832,9 +831,6 @@ iframe {
     top: 2rem;
     background-color: #f3ddea;
   }
-  .img-offer-content {
-    height: auto;
-  }
 }
 @media (max-width: 25rem) {
   .button-wrapper {
@@ -854,9 +850,6 @@ iframe {
   }
   .button-wrapper a#reservation-btn {
     font-size: 0.7rem;
-  }
-  .img-offer-content {
-    height: auto;
   }
 }
 .polityka-prywatnosci {
