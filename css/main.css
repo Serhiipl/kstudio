@@ -264,6 +264,7 @@ body._lock {
 .section_blok._about,
 .section_blok._offer,
 .section_blok._reviews,
+.section_blok._prices,
 .footer_body,
 .cookies-politics {
   max-width: 1200px;
@@ -330,6 +331,56 @@ body._lock {
 .img-offer-content {
   border-radius: 3%;
   height: auto;
+}
+
+.price_menu_wrapper {
+  margin-bottom: 3rem;
+}
+
+.price_menu_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 2rem 2rem;
+  font-family: Aboreto;
+  font-weight: 400;
+  font-size: 1.7em;
+  font-style: normal;
+  color: #391e41;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.price_menu_list li.active {
+  border-bottom: 2px solid #472551;
+  font-weight: 500;
+}
+
+.table_wrapper.hidden {
+  display: none;
+}
+
+.table_wrapper > :first-child {
+  border-top: 2px solid rgb(214, 93, 251);
+}
+
+.table_wrapper > :last-child {
+  margin-bottom: 3rem;
+}
+
+.service_price_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid rgb(214, 93, 251);
 }
 
 .cookies-politics > h2 {
@@ -582,6 +633,10 @@ iframe {
             transform: scale(1.1);
   }
 }
+.cena {
+  background-color: red;
+}
+
 @media (min-width: 49.6876rem) {
   .menu_list {
     display: -webkit-box;
@@ -628,6 +683,33 @@ iframe {
   }
   .form_wrapper {
     padding-top: 6rem;
+  }
+  .service_price_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .service_price_wrapper .name_of_service {
+    text-wrap: pretty;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+  }
+  .service_price_wrapper .description_of_cervice {
+    text-wrap: pretty;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+  }
+  .service_price_wrapper .price_of_cervice {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.3em;
+  }
+  .service_price_wrapper .img_of_cervice {
+    height: 6.25rem;
+    overflow: hidden;
   }
 }
 @media (max-width: 49.6875rem) {
