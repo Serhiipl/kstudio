@@ -155,12 +155,15 @@ let formWrapper = document.querySelector(".form_wrapper");
 let form = document.querySelector("#form");
 let closeBtn = document.querySelector("#form_close_btn");
 let openLink = document.querySelector("#reservation");
+
+const reservationBtnWrapper = document.querySelector(".button-wrapper");
 let reservationBtn = document.querySelector("#reservation-btn");
 //
 // // відкриття форми
 function openForm() {
   formWrapper.classList.toggle("d-none");
   isFormOpen = true;
+  reservationBtnWrapper.classList.add("d-none");
 }
 openLink.addEventListener("click", openForm);
 reservationBtn.addEventListener("click", () => {
@@ -181,6 +184,7 @@ closeBtn.addEventListener("click", function (e) {
 function closeForm() {
   formWrapper.classList.add("d-none");
   isFormOpen = false;
+  reservationBtnWrapper.classList.remove("d-none");
 }
 
 document.addEventListener("click", function (e) {
@@ -318,6 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const priceMenuList = document.querySelector(".price_menu_list");
   const tableWrappers = document.querySelectorAll(".table_wrapper");
   let activeLi = document.querySelector(".price_menu_list .active");
+  let priceMenuSelect = document.querySelector(".price_menu_select");
 
   priceMenuList.addEventListener("click", (event) => {
     const targetDiv = document.querySelector(event.target.dataset.targetDiv);
@@ -333,6 +338,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       activeLi = event.target;
       activeLi.classList.add("active");
+    }
+  });
+
+  priceMenuSelect.addEventListener("change", (event) => {
+    const selectedOption =
+      priceMenuSelect.options[priceMenuSelect.selectedIndex];
+    const targetDiv = selectedOption.dataset.targetDiv;
+    console.log(targetDiv);
+    if (targetDiv) {
+      tableWrappers.forEach((tableWrapper) => {
+        tableWrapper.classList.add("hidden");
+      });
+      document.querySelector(targetDiv).classList.remove("hidden");
     }
   });
 });

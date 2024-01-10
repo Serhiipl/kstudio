@@ -380,7 +380,42 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1.2rem;
   border-bottom: 2px solid rgb(214, 93, 251);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+.service_price_wrapper .name_of_service {
+  text-wrap: pretty;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: calc(1.2rem + 0.1vw);
+  grid-area: name;
+}
+.service_price_wrapper .description_of_cervice {
+  text-wrap: pretty;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  grid-area: description;
+  font-size: calc(0.9rem + 0.05vw);
+  line-height: 1.4;
+}
+.service_price_wrapper .price_of_cervice {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: calc(1.2rem + 0.1vw);
+  grid-area: price;
+}
+.service_price_wrapper .img_of_cervice {
+  height: 6.25rem;
+  overflow: hidden;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+  grid-area: img;
 }
 
 .cookies-politics > h2 {
@@ -548,6 +583,10 @@ iframe {
   text-align: center;
 }
 
+.button-wrapper.d-none {
+  display: none;
+}
+
 @-webkit-keyframes shadow-drop-2-center {
   0% {
     -webkit-transform: translateZ(0);
@@ -685,31 +724,28 @@ iframe {
     padding-top: 6rem;
   }
   .service_price_wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 2rem 1rem;
+        grid-template-areas: "name description description price img img";
+  }
+  .price_menu_select {
+    display: none;
   }
   .service_price_wrapper .name_of_service {
-    text-wrap: pretty;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 2em;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
   }
   .service_price_wrapper .description_of_cervice {
-    text-wrap: pretty;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
   }
   .service_price_wrapper .price_of_cervice {
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-style: italic;
-    font-weight: bolder;
-    font-size: 1.3em;
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
   }
   .service_price_wrapper .img_of_cervice {
-    height: 6.25rem;
-    overflow: hidden;
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
   }
 }
 @media (max-width: 49.6875rem) {
@@ -907,6 +943,56 @@ iframe {
     top: 2rem;
     background-color: #f3ddea;
   }
+  .price_menu_list {
+    display: none;
+  }
+  .price_menu_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .price_menu_wrapper .price_menu_select {
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgb(83, 0, 78);
+    font-family: Aboreto;
+    font-weight: 400;
+    font-size: 1.7em;
+    font-style: normal;
+    color: #391e41;
+  }
+  .service_price_wrapper {
+    gap: 2rem;
+    padding: 2.5rem 0.8rem;
+    border-bottom: 2px solid rgb(214, 93, 251);
+        grid-template-areas: "name  price" "description img " "description img";
+  }
+  .service_price_wrapper .img_of_cervice {
+    height: 12rem;
+  }
+  .service_price_wrapper .name_of_service {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .service_price_wrapper .description_of_cervice {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .service_price_wrapper .price_of_cervice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .service_price_wrapper .img_of_cervice {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
 }
 @media (max-width: 25rem) {
   .button-wrapper {
@@ -926,6 +1012,45 @@ iframe {
   }
   .button-wrapper a#reservation-btn {
     font-size: 0.7rem;
+  }
+  .price_menu_list {
+    display: none;
+  }
+  .price_menu_select {
+    margin: 0 auto;
+  }
+  .service_price_wrapper {
+    gap: 1.5rem;
+    padding: 1rem 0.8rem;
+    border-bottom: 2px solid rgb(214, 93, 251);
+    margin-bottom: 2.5rem;
+        grid-template-areas: "name  price" "description description" "img img ";
+  }
+  .service_price_wrapper .description_of_cervice {
+    line-height: 1.2;
+  }
+  .service_price_wrapper .img_of_cervice {
+    height: auto;
+  }
+  .service_price_wrapper .name_of_service {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .service_price_wrapper .description_of_cervice {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  .service_price_wrapper .price_of_cervice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .service_price_wrapper .img_of_cervice {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
   }
 }
 .polityka-prywatnosci {

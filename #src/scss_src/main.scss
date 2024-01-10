@@ -282,6 +282,9 @@ body._lock {
 }
 // ====================== ceny na uslugi =================================
 .price_menu_wrapper {
+  // display: flex;
+  // justify-content: center;
+  // width: 100%;
   margin-bottom: 3rem;
 }
 .price_menu_list {
@@ -310,7 +313,44 @@ body._lock {
 .service_price_wrapper {
   display: grid;
   align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1.2rem;
   border-bottom: 2px solid rgb(214, 93, 251);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: auto;
+
+  .name_of_service {
+    text-wrap: pretty;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    // font-size: 2em;
+    font-size: calc(1.2rem + 0.1vw);
+
+    grid-area: name;
+  }
+  .description_of_cervice {
+    text-wrap: pretty;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    grid-area: description;
+    font-size: calc(0.9rem + 0.05vw);
+    line-height: 1.4;
+  }
+  .price_of_cervice {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    // font-size: 1.3em;
+    font-size: calc(1.2rem + 0.1vw);
+    grid-area: price;
+  }
+  .img_of_cervice {
+    height: 6.25rem;
+    overflow: hidden;
+    align-self: stretch;
+    grid-area: img;
+  }
 }
 // ====================== polityka prywatnosci ===========================
 .cookies-politics > h2 {
@@ -428,6 +468,9 @@ iframe {
   // animation: shadow 3s linear 1s infinite alternate slidein;
   animation: shadow-drop-2-center 5s ease 1s infinite both;
 }
+.button-wrapper.d-none {
+  display: none;
+}
 @keyframes shadow-drop-2-center {
   0% {
     transform: translateZ(0);
@@ -458,6 +501,8 @@ iframe {
 .cena {
   background-color: red;
 }
+
+// duze
 // 49.6875 rem --> 795px
 // ===================== większe ekrany =================
 
@@ -513,31 +558,10 @@ iframe {
   // ====================== ceny na uslugi =================================
 
   .service_price_wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 2rem 1rem;
-    .name_of_service {
-      text-wrap: pretty;
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-      font-size: 2em;
-    }
-    .description_of_cervice {
-      text-wrap: pretty;
-      font-family: "Roboto", sans-serif;
-      font-weight: 300;
-    }
-    .price_of_cervice {
-      text-align: center;
-      font-family: "Lato", sans-serif;
-      font-style: italic;
-      font-weight: bolder;
-      font-size: 1.3em;
-    }
-    .img_of_cervice {
-      height: 6.25rem;
-      overflow: hidden;
-    }
+    grid-template-areas: "name description description price img img";
+  }
+  .price_menu_select {
+    display: none;
   }
 }
 
@@ -760,9 +784,7 @@ iframe {
       font-size: 1.3rem;
     }
   }
-  // .cookie_popup_body#cookie_popup {
-  //     // padding-bottom: 5lvh;
-  // }
+
   .cookie_popup_body .cookie_popup_content {
     margin-bottom: 3dvh;
   }
@@ -782,6 +804,40 @@ iframe {
   #form {
     top: 2rem;
     background-color: #f3ddea;
+  }
+  .price_menu_list {
+    display: none;
+  }
+  .price_menu_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .price_menu_select {
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgb(83, 0, 78);
+      @include font-title;
+    }
+  }
+
+  .service_price_wrapper {
+    gap: 2rem;
+    padding: 2.5rem 0.8rem;
+    border-bottom: 2px solid rgb(214, 93, 251);
+    grid-template-areas:
+      // "name description description price"
+      // ". img img ."
+      // ". img img .";
+
+      // "name . price"
+      // "description description img "
+      // "description description img";
+
+      "name  price"
+      "description img "
+      "description img";
+    .img_of_cervice {
+      height: 12rem;
+    }
   }
 }
 
@@ -810,6 +866,37 @@ iframe {
       // color: #391e41;
       // text-align: center;
       // padding: 1rem 0rem;
+    }
+  }
+  .price_menu_wrapper {
+  }
+  .price_menu_list {
+    display: none;
+  }
+  .price_menu_select {
+    margin: 0 auto;
+  }
+  .service_price_wrapper {
+    gap: 1.5rem;
+    padding: 1rem 0.8rem;
+    border-bottom: 2px solid rgb(214, 93, 251);
+    margin-bottom: 2.5rem;
+    grid-template-areas:
+      "name  price"
+      "description description"
+      "img img ";
+    .name_of_service {
+      // font-size: 1.4em;
+    }
+    .description_of_cervice {
+      // font-size: calc(1rem + 0.1vw);
+      line-height: 1.2;
+    }
+    .price_of_service {
+      // font-size: 1.5em;
+    }
+    .img_of_cervice {
+      height: auto;
     }
   }
 }
