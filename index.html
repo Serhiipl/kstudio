@@ -26,6 +26,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <title>theLooKS</title>
+
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/priceList.js"></script>
+    <script defer src="/js/cookies.js"></script>
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB33V3FRGR"></script>
 <script>
@@ -62,9 +67,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a data-goto="._offer" href="#" class="menu-link">Oferta</a>
           </li>
           <li>
+            <a data-goto="._prices" href="#" class="menu-link">Usługi</a>
+          </li>
+          <li>
+            <!-- Подумати на рахунок того щоб це тут залишити -->
             <a
               data-goto=".form_wrapper"
-              href="#"
+              href="#form_wrapper"
               class="menu-link ls"
               id="reservation"
               >Rezerwacje</a
@@ -1385,11 +1394,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
+    <div class="rights_container">
+      <p class="polityka-prywatnosci">
+        <a href="/polityka-prywatnosci.html">| Polityka prywatnosci |</a>
+      </p>
+      <p class="rights">©2024 badzega corp. All rights Reserved.=)</p>
+    </div>
   </div>
-  <p class="polityka-prywatnosci">
-    <a href="/polityka-prywatnosci.html">Polityka prywatnosci</a>
-  </p>
-  <p class="rights">©2023 badzega corp. All rights Reserved.=)</p>
 </footer>
 
 <div id="cookie_popup" class="cookie_popup_body d-none">
@@ -1610,10 +1621,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
 
+        
         <script defer type="module" src="/js/swiper-bundle.js"></script>
-        <script defer src="/js/cookies.js"></script>
         <script defer src="/js/gmap.js"></script>
         <script defer src="/js/swiper.js"></script>
-        <script src="/js/main.js"></script>
     </body>
 </html>

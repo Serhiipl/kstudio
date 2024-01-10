@@ -151,7 +151,7 @@ h6 {
   color: #391e41;
   text-transform: uppercase;
   @include font-title;
-  font-size: calc(1.3rem + 0.2vw);
+  font-size: calc(1.1rem + 0.2vw);
   font-weight: 400;
 }
 
@@ -282,9 +282,6 @@ body._lock {
 }
 // ====================== ceny na uslugi =================================
 .price_menu_wrapper {
-  // display: flex;
-  // justify-content: center;
-  // width: 100%;
   margin-bottom: 3rem;
 }
 .price_menu_list {
@@ -868,8 +865,7 @@ iframe {
       // padding: 1rem 0rem;
     }
   }
-  .price_menu_wrapper {
-  }
+
   .price_menu_list {
     display: none;
   }
@@ -900,10 +896,19 @@ iframe {
     }
   }
 }
+.rights_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  gap: 1rem;
+  p > a {
+    color: #000000;
+  }
+}
 .polityka-prywatnosci {
-  text-align: center;
-  @include font-standard;
-  color: #000;
+  // text-align: center;
 }
 p.rights {
   text-align: center;

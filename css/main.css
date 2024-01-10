@@ -156,7 +156,7 @@ h6 {
   font-size: 1.7em;
   font-style: normal;
   color: #391e41;
-  font-size: calc(1.3rem + 0.2vw);
+  font-size: calc(1.1rem + 0.2vw);
   font-weight: 400;
 }
 
@@ -1053,16 +1053,24 @@ iframe {
     -ms-grid-column-span: 3;
   }
 }
-.polityka-prywatnosci {
-  text-align: center;
-  font-family: Lato;
-  font-style: italic;
-  font-size: 1em;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  line-height: 1.4em;
-  color: #391e41;
-  color: #000;
+.rights_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+.rights_container p > a {
+  color: #000000;
 }
 
 p.rights {
