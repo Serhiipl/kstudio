@@ -316,12 +316,13 @@ body._lock {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-template-rows: auto;
 
-  .name_of_service {
+  .name_of_service > h4 {
     text-wrap: pretty;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    // font-size: 2em;
-    font-size: calc(1.2rem + 0.1vw);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    padding: auto;
+    overflow-wrap: break-word;
+    font-size: calc(1rem + 0.1vw);
 
     grid-area: name;
   }
@@ -334,19 +335,30 @@ body._lock {
     line-height: 1.4;
   }
   .price_of_cervice {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.4rem;
     font-family: "Lato", sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    // font-size: 1.3em;
-    font-size: calc(1.2rem + 0.1vw);
-    grid-area: price;
+    .price {
+      // text-align: center;
+      // font-style: italic;
+      font-weight: 400;
+      font-size: calc(1.2rem + 0.1vw);
+      grid-area: price;
+    }
+    .service_time {
+      font-size: calc(0.8rem + 0.1vw);
+      color: grey;
+    }
   }
   .img_of_cervice {
     height: 6.25rem;
     overflow: hidden;
     align-self: stretch;
     grid-area: img;
+    border-radius: 15px;
   }
 }
 // ====================== polityka prywatnosci ===========================
