@@ -322,8 +322,7 @@ body._lock {
     font-weight: 400;
     padding: auto;
     overflow-wrap: break-word;
-    font-size: calc(1rem + 0.1vw);
-
+    font-size: calc(1rem + 0.05vw);
     grid-area: name;
   }
   .description_of_cervice {
@@ -331,7 +330,7 @@ body._lock {
     font-family: "Roboto", sans-serif;
     font-weight: 200;
     grid-area: description;
-    font-size: calc(0.9rem + 0.05vw);
+    font-size: calc(0.8rem + 0.05vw);
     line-height: 1.4;
   }
   .price_of_cervice {
@@ -345,11 +344,11 @@ body._lock {
       // text-align: center;
       // font-style: italic;
       font-weight: 400;
-      font-size: calc(1.2rem + 0.1vw);
+      font-size: calc(0.8rem + 0.1vw);
       grid-area: price;
     }
     .service_time {
-      font-size: calc(0.8rem + 0.1vw);
+      font-size: calc(0.6rem + 0.1vw);
       color: grey;
     }
   }
@@ -506,9 +505,6 @@ iframe {
     box-shadow: 0 0 30px 15px rgba(158, 148, 148, 0.779);
     transform: scale(1.1);
   }
-}
-.cena {
-  background-color: red;
 }
 
 // duze
