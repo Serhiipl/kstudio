@@ -176,8 +176,8 @@ body._lock {
 /*----------------title-block----------------*/
 .fullscreen_title_block {
   min-height: 100vh;
-  background: url(../images/img/title_block_background.jpg) center / cover
-    no-repeat fixed;
+  background: url(../images/img/title_block_big.jpg) center / cover no-repeat
+    fixed;
   padding: 10% 5%;
   margin-top: 1.7rem;
   display: flex;
@@ -767,12 +767,17 @@ iframe {
   .fullscreen_title_block {
     min-height: 50dvh;
   }
-  // .section_content {
-  //   flex-direction: column;
-  // }
   .section_content {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0px;
+    align-items: start;
   }
+  // .section_content {
+  //   grid-template-columns: 1fr;
+  // }
   .sub_title {
     margin-bottom: 1.5rem;
   }

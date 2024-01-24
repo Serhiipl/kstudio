@@ -184,7 +184,7 @@ body._lock {
 /*----------------title-block----------------*/
 .fullscreen_title_block {
   min-height: 100vh;
-  background: url(../images/img/title_block_background.jpg) center/cover no-repeat fixed;
+  background: url(../images/img/title_block_big.jpg) center/cover no-repeat fixed;
   padding: 10% 5%;
   margin-top: 1.7rem;
   display: -webkit-box;
@@ -919,8 +919,25 @@ iframe {
     min-height: 50dvh;
   }
   .section_content {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .section_content > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .section_content > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
   }
   .sub_title {
     margin-bottom: 1.5rem;
