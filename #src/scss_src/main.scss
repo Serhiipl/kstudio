@@ -121,16 +121,16 @@ h6 {
   max-width: 1200px;
   margin: 0px auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  padding: 0px 30px;
+  padding: 0px 10px;
   min-height: 70px;
 }
 .header_logo {
   z-index: 5;
   // font-size: 5rem;
-  background-image: url(/images/logo/transparent.png);
+  background-image: url(../images/logo/transparent.png);
   background-size: cover;
   width: 11rem;
   height: 6rem;
@@ -176,11 +176,27 @@ body._lock {
 /*----------------title-block----------------*/
 .fullscreen_title_block {
   min-height: 100vh;
-  background: url(../images/img/title_block_big.jpg) center / cover no-repeat
+  background: url(../images/img/title_block_norm.webp) center/cover no-repeat
     fixed;
   padding: 10% 5%;
   margin-top: 1.7rem;
   display: flex;
+
+  @supports (-webkit-touch-callout: inherit) {
+    background-attachment: scroll;
+  }
+  // @supports (-webkit-touch-callout: none) {
+  //   /* CSS specific to iOS devices */
+  //   // background: url(../images/img/title_block_med.webp) center/cover no-repeat;
+  //   // // width: 100vw;
+  //   // height: 100vh;
+  //   background-image: url(../images/img/title_block_big.webp);
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-attachment: scroll;
+  //   -webkit-background-attachment: scroll;
+  // }
 }
 .fullscreen-body {
   background-color: transparent;
@@ -207,20 +223,25 @@ body._lock {
 *
 */
 .about_content {
-  display: flex;
-  flex-wrap: nowrap;
-  flex: 1 1 auto;
-  align-items: center;
-  height: 100%;
+  // display: flex;
+  // flex-wrap: nowrap;
+  // flex: 1 1 auto;
+  // align-items: center;
+  // height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
   @include font-standard;
 
   .about_image {
-    flex-basis: 300px;
-    width: 300px;
+    width: clamp(21.75rem, 50%, 28.125rem);
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 50%;
     margin-top: 2rem;
-    flex-grow: 1;
+    align-self: center;
+  }
+  .content_text {
+    align-self: center;
   }
 }
 
@@ -574,6 +595,23 @@ iframe {
 // ===================== mniejsze ekrany =================
 
 @media (max-width: 49.6875rem) {
+  .fullscreen_title_block {
+    min-height: 90dvh;
+    width: 100%;
+    width: auto;
+    background: url(../images/img/phone_background_med.webp) center/cover
+      no-repeat fixed;
+    margin-top: 1.7rem;
+    padding-top: 35dvh;
+    color: #d8a7d3;
+    @media (min-resolution: 2dppx) {
+      background: url("../images/img/title_block_norm.webp") center/cover
+        no-repeat fixed;
+      align-items: flex-start;
+      min-height: 100dvh;
+      width: 100dvw;
+    }
+  }
   // .button-wrapper {
   //   padding: 0.8rem;
   //   background-color: #391f41;
@@ -763,10 +801,6 @@ iframe {
     width: 4rem;
     height: 4rem;
   }
-
-  .fullscreen_title_block {
-    min-height: 50dvh;
-  }
   .section_content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -775,9 +809,7 @@ iframe {
     grid-row-gap: 0px;
     align-items: start;
   }
-  // .section_content {
-  //   grid-template-columns: 1fr;
-  // }
+
   .sub_title {
     margin-bottom: 1.5rem;
   }
@@ -853,7 +885,32 @@ iframe {
 
 // ===================== małe ekrany =================
 
-@media (max-width: 25rem) {
+@media (max-width: 27rem) {
+  .fullscreen_title_block {
+    min-height: 100vh;
+    width: auto;
+    background: url(../images/img/phone_background_small.webp) center/cover
+      no-repeat fixed;
+    margin-top: 1.7rem;
+    padding-top: 35dvh;
+    color: #d8a7d3;
+    @media (min-resolution: 2dppx) {
+      background: url("../images/img/phone_background_small.webp")
+        center/contain no-repeat fixed;
+      align-items: flex-start;
+    }
+  }
+  .about_content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: centers;
+    .about_image {
+      border-radius: 48%;
+      // margin-top: 2rem;
+      align-self: center;
+      justify-self: center;
+    }
+  }
   .button-wrapper {
     padding: 0.8rem;
     // background-color: rgb(215, 167, 210);
@@ -877,6 +934,14 @@ iframe {
       // text-align: center;
       // padding: 1rem 0rem;
     }
+  }
+  .section_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0px;
+    align-items: start;
   }
 
   .price_menu_list {
