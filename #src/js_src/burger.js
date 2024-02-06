@@ -55,6 +55,21 @@ if (menuLinks.length > 0) {
     }
   }
 }
+
+// DYNAMICZNA ZMIANA MARGIN-TOP DLA FULLSCREENTITLE BLOCKU
+const header = document.querySelector("header");
+const fScreenTitleBlock = document.querySelector(".wrapper");
+const windowInnerHeight = document.documentElement.clientHeight;
+
+// console.log(windowInnerHeight);
+// let marginTop = header.clientHeight;
+// console.log(marginTop);
+// // document.documentElement.style.paddingTop = `${marginTop}px`;
+// fScreenTitleBlock.style.marginTop = `calc(${marginTop}px + 90dvh)`;
+// console.log(
+//   (fScreenTitleBlock.style.marginTop = `calc(-${marginTop}px - 100dvh)`)
+// );
+
 //
 //
 // podmiana menu options w formie

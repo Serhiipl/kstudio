@@ -121,7 +121,7 @@ h6 {
   max-width: 1200px;
   margin: 0px auto;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 0px 10px;
@@ -132,7 +132,7 @@ h6 {
   // font-size: 5rem;
   background-image: url(../images/logo/transparent.png);
   background-size: cover;
-  width: 11rem;
+  width: 12rem;
   height: 6rem;
   // margin-top: -1.3rem;
 }
@@ -167,35 +167,39 @@ body._lock {
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  margin-top: 103dvh;
+
   // font-size: calc(15px + 0.4vw);// dynamiczna zmiana rozmiaru tekstu///////////////////////////////////////////////
 }
 
 .main_content {
   padding: 70px 0px 30px 0px;
 }
-/*----------------title-block----------------*/
+/*============================= TITLE BLOCK ============================*/
 .fullscreen_title_block {
-  min-height: 100vh;
-  background: url(../images/img/title_block_norm.webp) center/cover no-repeat
-    fixed;
+  background: url(../images/img/title_block_norm.webp);
+  // center/cover no-repeat
+  //   fixed;
   padding: 10% 5%;
-  margin-top: 1.7rem;
+  // margin-top: 1.7rem;
   display: flex;
+  color: #d8a7d3;
 
-  @supports (-webkit-touch-callout: inherit) {
-    background-attachment: scroll;
-  }
-  // @supports (-webkit-touch-callout: none) {
-  //   /* CSS specific to iOS devices */
-  //   // background: url(../images/img/title_block_med.webp) center/cover no-repeat;
-  //   // // width: 100vw;
-  //   // height: 100vh;
-  //   background-image: url(../images/img/title_block_big.webp);
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; // test1
+  background-position: center;
+  margin-top: -100vh;
+  width: 100vw;
+  height: 100vh;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: -1;
+
+  // @supports (-webkit-touch-callout: inherit) {
   //   background-attachment: scroll;
-  //   -webkit-background-attachment: scroll;
   // }
 }
 .fullscreen-body {
@@ -217,17 +221,15 @@ body._lock {
   font-size: 1.5em;
 }
 
-/*
-*
-* About me block
-*
-*/
+// =======================About me block======================================//
+
+@supports (-webkit-touch-callout: inherit) {
+  #about,
+  #prices {
+    // margin-top: 100vh;
+  }
+}
 .about_content {
-  // display: flex;
-  // flex-wrap: nowrap;
-  // flex: 1 1 auto;
-  // align-items: center;
-  // height: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
 
@@ -236,7 +238,7 @@ body._lock {
   .about_image {
     width: clamp(21.75rem, 50%, 28.125rem);
     height: auto;
-    border-radius: 50%;
+    border-radius: 0.8rem;
     margin-top: 2rem;
     align-self: center;
   }
@@ -245,7 +247,7 @@ body._lock {
   }
 }
 
-/*--------------sections---------------------*/
+/*=============================SECTIONS============================*/
 .section_blok._about,
 .section_blok._offer,
 .section_blok._reviews,
@@ -253,7 +255,9 @@ body._lock {
 .footer_body,
 .cookies-politics {
   max-width: 1200px;
-  margin: 2em auto;
+  margin: 0 auto;
+  padding: 2rem 0;
+  background-color: white; // test1
 }
 .offer_body,
 .about_body,
@@ -262,7 +266,7 @@ body._lock {
   padding: 20px 20px;
 }
 
-/*----------------------ofer-----------------*/
+/*=============================  OFERTA  ================================*/
 .offer_element {
   margin-bottom: 5em;
 }
@@ -270,7 +274,7 @@ body._lock {
   @include font-title;
   text-transform: uppercase;
   // font-size: 2em;
-  font-size: calc(2rem + 0.1vw);
+  font-size: calc(1.5rem + 0.1vw);
   margin-bottom: 4rem;
   text-align: center;
 }
@@ -303,6 +307,7 @@ body._lock {
 }
 // ====================== ceny na uslugi =================================
 .price_menu_wrapper {
+  // background-color: whitesmoke;
   margin-bottom: 3rem;
 }
 .price_menu_list {
@@ -311,7 +316,7 @@ body._lock {
   justify-content: space-evenly;
   padding: 2rem 2rem;
   @include font-title;
-  font-size: 1.2rem;
+  font-size: calc(1rem + 0.1vw);
   cursor: pointer;
 
   li.active {
@@ -357,7 +362,7 @@ body._lock {
   .price_of_cervice {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     row-gap: 0.4rem;
     font-family: "Lato", sans-serif;
@@ -373,13 +378,13 @@ body._lock {
       color: grey;
     }
   }
-  .img_of_cervice {
-    height: 6.25rem;
-    overflow: hidden;
-    align-self: stretch;
-    grid-area: img;
-    border-radius: 15px;
-  }
+  // .img_of_cervice {
+  //   height: 6.25rem;
+  //   overflow: hidden;
+  //   align-self: stretch;
+  //   grid-area: img;
+  //   border-radius: 15px;
+  // }
 }
 // ====================== polityka prywatnosci ===========================
 .cookies-politics > h2 {
@@ -529,8 +534,9 @@ iframe {
 }
 
 // duze
+
 // 49.6875 rem --> 795px
-// ===================== większe ekrany =================
+// ===================== większe ekrany =================//
 
 @media (min-width: 49.6876rem) {
   // .button-wrapper {
@@ -584,7 +590,7 @@ iframe {
   // ====================== ceny na uslugi =================================
 
   .service_price_wrapper {
-    grid-template-areas: "name description description price img img";
+    grid-template-areas: "name description description price";
   }
   .price_menu_select {
     display: none;
@@ -595,22 +601,51 @@ iframe {
 // ===================== mniejsze ekrany =================
 
 @media (max-width: 49.6875rem) {
+  .wrapper {
+    margin-top: 102dvh;
+  }
   .fullscreen_title_block {
-    min-height: 90dvh;
-    width: 100%;
-    width: auto;
-    background: url(../images/img/phone_background_med.webp) center/cover
-      no-repeat fixed;
-    margin-top: 1.7rem;
-    padding-top: 35dvh;
-    color: #d8a7d3;
-    @media (min-resolution: 2dppx) {
-      background: url("../images/img/title_block_norm.webp") center/cover
-        no-repeat fixed;
-      align-items: flex-start;
-      min-height: 100dvh;
-      width: 100dvw;
-    }
+    // min-height: 90dvh;
+    // width: 100%;
+    // width: auto;
+    // background: url(../images/img/phone_background_med.webp) center/cover
+    //   no-repeat fixed;
+    // margin-top: 1.7rem;
+    // padding-top: 35dvh;
+    // color: #d8a7d3;
+    // @media (min-resolution: 2dppx) {
+    //   background: url("../images/img/title_block_norm.webp") center/cover
+    //     no-repeat fixed;
+    //   align-items: flex-start;
+    //   min-height: 100dvh;
+    //   width: 100dvw;
+    // }
+    // min-height: 100vh;
+    // width: auto;
+    background: url(../images/img/phone_background_med.webp);
+    //  center/cover
+    //   no-repeat fixed;
+    // margin-top: 1.7rem;
+    // padding-top: 35dvh;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin-top: -100dvh;
+    width: 100vw;
+    height: 100vh;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    // @media (min-resolution: 2dppx) {
+    //   background: url("../images/img/phone_background_small.webp")
+    //     center/contain no-repeat fixed;
+    //   align-items: flex-start;
+    //   @supports (-webkit-touch-callout: inherit) {
+    //     background-attachment: scroll;
+    //   }
+    // }
   }
   // .button-wrapper {
   //   padding: 0.8rem;
@@ -855,15 +890,15 @@ iframe {
     justify-content: center;
     width: 100%;
     .price_menu_select {
-      font-size: 1.5rem;
       border-bottom: 1px solid rgb(83, 0, 78);
       @include font-title;
+      font-size: calc(1.3rem + 0.1vw);
     }
   }
 
   .service_price_wrapper {
     gap: 2rem;
-    padding: 2.5rem 0.8rem;
+    padding: 1.8rem 0.8rem;
     border-bottom: 2px solid rgb(214, 93, 251);
     grid-template-areas:
       // "name description description price"
@@ -875,38 +910,59 @@ iframe {
       // "description description img";
 
       "name  price"
-      "description img "
-      "description img";
-    .img_of_cervice {
-      height: 12rem;
-    }
+      "description description"
+      "description description";
+    // .img_of_cervice {
+    //   height: 12rem;
+    // }
   }
 }
 
 // ===================== małe ekrany =================
 
 @media (max-width: 27rem) {
-  .fullscreen_title_block {
-    min-height: 100vh;
-    width: auto;
-    background: url(../images/img/phone_background_small.webp) center/cover
-      no-repeat fixed;
-    margin-top: 1.7rem;
-    padding-top: 35dvh;
-    color: #d8a7d3;
-    @media (min-resolution: 2dppx) {
-      background: url("../images/img/phone_background_small.webp")
-        center/contain no-repeat fixed;
-      align-items: flex-start;
+  @supports (-webkit-touch-callout: inherit) {
+    .wrapper {
+      margin-top: 100dvh;
     }
+  }
+  .wrapper {
+    margin-top: 98dvh;
+  }
+  .fullscreen_title_block {
+    // min-height: 100vh;
+    // width: auto;
+    background: url(../images/img/phone_background_small.webp);
+    //  center/cover
+    //   no-repeat fixed;
+    // margin-top: 1.7rem;
+    // padding-top: 35dvh;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin-top: -100vh;
+    width: 100vw;
+    height: 100vh;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    // @media (min-resolution: 2dppx) {
+    //   background: url("../images/img/phone_background_small.webp")
+    //     center/contain no-repeat fixed;
+    //   align-items: flex-start;
+    //   @supports (-webkit-touch-callout: inherit) {
+    //     background-attachment: scroll;
+    //   }
+    // }
   }
   .about_content {
     grid-template-columns: 1fr;
     justify-items: center;
-    align-items: centers;
+    align-items: center;
     .about_image {
-      border-radius: 48%;
-      // margin-top: 2rem;
+      border-radius: 0.8rem;
       align-self: center;
       justify-self: center;
     }
@@ -957,8 +1013,7 @@ iframe {
     margin-bottom: 2.5rem;
     grid-template-areas:
       "name  price"
-      "description description"
-      "img img ";
+      "description description";
     .name_of_service {
       // font-size: 1.4em;
     }
@@ -969,9 +1024,9 @@ iframe {
     .price_of_service {
       // font-size: 1.5em;
     }
-    .img_of_cervice {
-      height: auto;
-    }
+    // .img_of_cervice {
+    //   height: auto;
+    // }
   }
 }
 .rights_container {
@@ -1085,6 +1140,10 @@ div.cookie_popup_body {
 }
 
 //////////////////////////////////  GALERIA  /////////////////////////////
+
+.main.gallery {
+  margin-top: -90dvh;
+}
 
 .gallety_sub_title {
   display: flex;
