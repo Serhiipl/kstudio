@@ -163,7 +163,7 @@ body._lock {
 
 .wrapper {
   position: relative;
-  // min-height: 100 vh;
+  min-height: 100 vh;
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -180,7 +180,7 @@ body._lock {
 .fullscreen_title_block {
   background: url(../images/img/title_block_norm.webp);
   // center/cover no-repeat
-  //   fixed;
+  // fixed;
   padding: 10% 5%;
   // margin-top: 1.7rem;
   display: flex;
@@ -188,18 +188,38 @@ body._lock {
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover; // test1
-  background-position: center;
+  background-size: cover;
   margin-top: -100vh;
   width: 100vw;
   height: 100vh;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+  left: 0;
   z-index: -1;
 
   // @supports (-webkit-touch-callout: inherit) {
   //   background-attachment: scroll;
+  // }
+
+  // @media (min-resolution: 2dppx) {
+  //   background: url("../images/img/title_block_norm.webp") center/contain
+  //     no-repeat fixed;
+
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   background-size: cover;
+  //   margin-top: -100vh;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   position: -webkit-sticky; /* Safari */
+  //   position: sticky;
+  //   top: 0;
+  //   z-index: -1;
+  //   // align-items: flex-start;
+  //   @supports (-webkit-touch-callout: inherit) {
+  //     background-attachment: scroll;
+  //   }
   // }
 }
 .fullscreen-body {
@@ -223,12 +243,12 @@ body._lock {
 
 // =======================About me block======================================//
 
-@supports (-webkit-touch-callout: inherit) {
-  #about,
-  #prices {
-    // margin-top: 100vh;
-  }
-}
+// @supports (-webkit-touch-callout: inherit) {
+//   #about,
+//   #prices {
+//     margin-top: 100vh;
+//   }
+// }
 .about_content {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -851,10 +871,6 @@ iframe {
   .footer_body {
     display: flex;
     flex-direction: column;
-
-    // .contacts_info_wrapper {
-    //     // flex-direction: column;
-    // }
     .contacts_wrapper {
       width: 100%;
       margin-top: 2rem;
@@ -1485,10 +1501,12 @@ body.lock {
 
 .form_wrapper {
   position: fixed;
-  // top: 4rem;
+  top: 4rem;
   right: 3rem;
   // bottom: 0.5rem;
   z-index: 2;
+  // left: 50%;
+  // transform: translate(-50%);
 }
 .form_close_icon {
   // display: block;

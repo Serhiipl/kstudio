@@ -57,9 +57,9 @@ if (menuLinks.length > 0) {
 }
 
 // DYNAMICZNA ZMIANA MARGIN-TOP DLA FULLSCREENTITLE BLOCKU
-const header = document.querySelector("header");
-const fScreenTitleBlock = document.querySelector(".wrapper");
-const windowInnerHeight = document.documentElement.clientHeight;
+// const header = document.querySelector("header");
+// const fScreenTitleBlock = document.querySelector(".wrapper");
+// const windowInnerHeight = document.documentElement.clientHeight;
 
 // console.log(windowInnerHeight);
 // let marginTop = header.clientHeight;

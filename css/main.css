@@ -167,6 +167,7 @@ body._lock {
 
 .wrapper {
   position: relative;
+  min-height: 100 vh;
   min-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,12 +193,12 @@ body._lock {
   display: flex;
   color: #d8a7d3;
   background-size: cover;
-  background-position: center;
   margin-top: -100vh;
   width: 100vw;
   height: 100vh; /* Safari */
   position: sticky;
   top: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -1581,6 +1582,7 @@ body.lock {
 /*--------------------styli do formy--------------------------------------------*/
 .form_wrapper {
   position: fixed;
+  top: 4rem;
   right: 3rem;
   z-index: 2;
 }
