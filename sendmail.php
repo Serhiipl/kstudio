@@ -22,7 +22,7 @@ $mail->isHTML(true);
 $mail->setFrom('strona@sergioslab.pl', 'Serhii');
 // komu wysylamy
 $mail->addAddress('badzega@gmail.com');
-$mail->addAddress('katerynasukhovetska@gmail.com');
+$mail->addAddress('thelookspl@gmail.com');
 // tema wiadomosci
 $mail->Subject = 'Kochanie ktos cos chce';
 
